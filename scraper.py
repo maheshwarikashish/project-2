@@ -16,16 +16,12 @@ def scrape_website(url):
         return None
 
 if __name__ == "__main__":
-    # Example Usage:
-    # We will need to find a good website to scrape for business problems.
-    # For now, let's use a placeholder.
-    target_url = "https://www.indiehackers.com" # Replaced placeholder with a real target URL
+    target_url = "https://www.indiehackers.com/blog"
     
     print(f"Scraping {target_url}...")
     soup = scrape_website(target_url)
     
     if soup:
-        # In the next step, we will add logic here to extract and process the text.
-        print("Scraping successful. Next, we will process the text to find keywords.")
-        # For now, let's just print the title
-        print(f"Page Title: {soup.title.string}")
+        print("Scraping successful. Here is the raw HTML:")
+        # Print the first 3000 characters of the prettified HTML
+        print(soup.prettify()[:3000])

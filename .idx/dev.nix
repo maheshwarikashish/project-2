@@ -4,10 +4,14 @@
 
   # Packages to make available in the environment.
   packages = [
-    pkgs.python3
-    pkgs.python3Packages.pip
-    pkgs.python3Packages.requests
-    pkgs.python3Packages.beautifulsoup4
+    pkgs.chromium
+    pkgs.chromedriver
+    (pkgs.python3.withPackages (ps: [
+      ps.pip
+      ps.requests
+      ps.beautifulsoup4
+      ps.selenium
+    ]))
   ];
 
   # Environment variables to set.
