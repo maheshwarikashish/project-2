@@ -19,7 +19,7 @@ if __name__ == "__main__":
     # Example Usage:
     # We will need to find a good website to scrape for business problems.
     # For now, let's use a placeholder.
-    target_url = "https://example.com" # Replace with a real target URL later
+    target_url = "https://www.indiehackers.com" # Replaced placeholder with a real target URL
     
     print(f"Scraping {target_url}...")
     soup = scrape_website(target_url)
