@@ -22,6 +22,7 @@ if __name__ == "__main__":
     soup = scrape_website(target_url)
     
     if soup:
-        print("Scraping successful. Here is the raw HTML:")
-        # Print the first 3000 characters of the prettified HTML
-        print(soup.prettify()[:3000])
+        print("Scraping successful. Here is the extracted text:")
+        # Extract and print the first 2000 characters of the text
+        text = soup.get_text()
+        print(text[:2000])
