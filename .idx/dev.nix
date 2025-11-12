@@ -4,13 +4,16 @@
 
   # Packages to make available in the environment.
   packages = [
-    pkgs.chromium
-    pkgs.chromedriver
+    # For Module 4: Frontend
+    pkgs.nodejs_20
+
+    # For Modules 1, 2, 3: Python Backend
     (pkgs.python3.withPackages (ps: [
       ps.pip
       ps.requests
       ps.beautifulsoup4
-      ps.selenium
+      ps.pandas
+      ps.flask
     ]))
   ];
 
@@ -20,6 +23,7 @@
   # VS Code extensions to install.
   idx.extensions = [
     "ms-python.python"
+    "dbaeumer.vscode-eslint" # For frontend development
   ];
 
   # Workspace lifecycle hooks.
@@ -33,17 +37,6 @@
     onStart = {
       # Example: start a dev server
       # start-server = "npm run dev";
-    };
-  };
-
-  # Web previews.
-  idx.previews = {
-    enable = true;
-    previews = {
-      # web = {
-      #   command = ["npm" "run" "dev" "--" "--port" "$PORT"];
-      #   manager = "web";
-      # };
     };
   };
 }
