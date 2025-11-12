@@ -16,13 +16,20 @@ def scrape_website(url):
         return None
 
 if __name__ == "__main__":
-    target_url = "https://www.indiehackers.com/blog"
+    target_url = "http://quotes.toscrape.com/"
     
     print(f"Scraping {target_url}...")
     soup = scrape_website(target_url)
     
     if soup:
-        print("Scraping successful. Here is the extracted text:")
-        # Extract and print the first 2000 characters of the text
+        # Extract the text
         text = soup.get_text()
-        print(text[:2000])
+        print(f"Length of scraped text: {len(text)}")
+
+        # Save the scraped text to a file
+        with open("scraped_data.txt", "w", encoding="utf-8") as f:
+            f.write(text)
+            
+        print("Scraping successful. Data saved to scraped_data.txt")
+    else:
+        print("Scraping failed, soup object is None.")
